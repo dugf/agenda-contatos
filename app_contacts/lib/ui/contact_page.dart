@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:app_contacts/helpers/contact_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -73,7 +74,7 @@ class _ContactPageState extends State<ContactPage> {
           backgroundColor: Colors.red,
         ),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -84,8 +85,8 @@ class _ContactPageState extends State<ContactPage> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: _editedContact!.img == null
-                          ? const AssetImage("assets/images/person.png")
+                      image: _editedContact?.img == null
+                          ? const AssetImage('assets/images/person.png')
                               as ImageProvider
                           : FileImage(File(_editedContact!.img!)),
                       fit: BoxFit.cover,
